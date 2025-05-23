@@ -44,3 +44,89 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+Todo List — React App
+An interactive task management application built with React and TypeScript. Features include drag-and-drop columns and tasks, multi-selection, filtering, task editing, and persistent local storage.
+
+Technologies Used
+React 18 + TypeScript
+
+Zustand — lightweight state management
+
+react-dnd — drag-and-drop logic
+
+styled-components — component-level styling
+
+react-dnd-html5-backend — desktop drag-and-drop support
+
+Features
+Drag and drop columns and tasks
+
+Create, edit, and delete tasks
+
+Multi-task selection and group actions (mark as complete/incomplete)
+
+Real-time filtering (all / completed / incomplete)
+
+Task search with live highlighting
+
+Responsive layout for desktop, tablet, and mobile
+
+State persistence via localStorage (powered by zustand/persist)
+
+📁 Project Structure
+bash
+Copy
+Edit
+src/
+├── components/
+│ ├── Column.tsx # Single column component with DnD logic
+│ ├── Task.tsx # Task card component
+│ ├── TaskSearch.tsx # Live search bar
+│ ├── ColumnManager.tsx # Add new columns
+│ ├── FilterManager.tsx # Filter tasks by status
+│ └── SelectManager.tsx # Group task actions
+├── styles/ # Styled UI elements (Button, Input)
+├── store/
+│ └── useTodoStore.ts # Zustand state store (columns, tasks, filters)
+├── types.ts # Type definitions for tasks and columns
+└── App.tsx # Main application component
+⚙️ Getting Started
+bash
+Copy
+Edit
+git clone https://github.com/your-username/todo-list.git
+cd todo-list
+npm install
+npm start
+⚠️ Note for Node.js v17+ or later: add this flag to avoid Webpack errors:
+
+bash
+Copy
+Edit
+set NODE_OPTIONS=--openssl-legacy-provider && npm start
+📦 Key Dependencies
+json
+Copy
+Edit
+{
+"zustand": "^4.x",
+"react-dnd": "^16.x",
+"react-dnd-html5-backend": "^16.x",
+"styled-components": "^5.x",
+"typescript": ">=4.9",
+"react": "^18.x",
+"react-scripts": "5.x"
+}
+✅ Planned Improvements
+Touch & mobile drag-and-drop support (react-dnd-multi-backend)
+
+Task import/export as JSON or CSV
+
+Trello-style timeline view
+
+Authentication and cloud syncing
+
+👤 Author
+Built by Lazzyend for learning, practicing, and extending task management interfaces.
+Can be extended into a kanban board, mini CRM, or collaboration tool.
