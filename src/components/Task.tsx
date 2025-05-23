@@ -207,7 +207,12 @@ const Wrapper = styled.div<{
     disableDrag || isEditing ? "pointer" : "grab"};
   opacity: ${({ selected }) => (selected ? 0.8 : 1)};
 
-  border: ${({ selected }) => (selected ? "2px dashed #fff" : "none")};
+  border: ${({ selected, completed }) =>
+    selected
+      ? "2px dashed #fff"
+      : completed
+      ? "2px solid #00aa25b3"
+      : "2px solid #ff2205ab"};
   background-color: ${({ selected, completed }) =>
     selected ? "#8dd0fd" : completed ? "#d4edda" : "#f8d7da"};
   color: ${({ completed }) => (completed ? "green" : "red")};
